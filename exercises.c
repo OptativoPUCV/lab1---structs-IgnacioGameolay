@@ -63,18 +63,23 @@ arreglos en un tercer arreglo también ordenado de menor a mayor.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
                        int result[]) {
-}
-  /*
-  int size3 = size1 + size2; 
-  int *arr3 = (int *) malloc(sizeof(int)*size3);
+
   int i = 0, j = 0, k = 0;
 
   while (i < size1 && j < size2){
-    
+    if (arr1[i] < arr2[j]){
+        result[k] = arr1[i];
+      i++;
+    }
+    else if(arr1[i] > arr2[j]){
+          result[k] = arr2[j];
+        j++;
+      }
+    k++;
   }
   
   
-         }*/
+         }
 
 /*
 Ejercicio 5: Comprobación de Ordenación
@@ -143,4 +148,22 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) { return NULL; }
+Nodo *crearListaEnlazada(int arr[], int size) { 
+  Nodo *cabeza = NULL;
+  Nodo *temp = NULL;
+  Nodo *actual = NULL;
+  
+  for (int i = 0; i < size; i++){
+    temp = (Nodo *)malloc(sizeof(Nodo));
+    temp->numero = arr[i];
+    temp->siguiente = NULL;
+
+    if (cabeza == NULL) cabeza = temp;
+    else actual->siguiente = temp;
+    actual = temp;
+  }
+  
+  
+  return cabeza; 
+
+}
