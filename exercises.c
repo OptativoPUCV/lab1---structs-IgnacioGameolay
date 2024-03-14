@@ -1,4 +1,4 @@
-a #include <ctype.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,14 +9,26 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int findMax(int arr[], int size) { return 0; }
+int findMax(int arr[], int size) { 
+  int max = arr[0];
+  for (int i = 0; i < size; i++){
+    if (arr[i] > max){
+      max = arr[i];
+    }
+  }  
+  return max; 
+}
 
 /*
 Ejercicio 2: Invertir un Arreglo
 Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
-void reverseArray(int arr[], int size) {}
+void reverseArray(int arr[], int size) {
+  int temp;
+  for (int i = 0; i < size / 2; i++)
+  
+}
 
 /*
 Ejercicio 3: Filtrar Números Pares
@@ -35,7 +47,18 @@ ordenados de menor a mayor y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado de menor a mayor.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) {}
+                       int result[]) {
+
+  int size3 = size1 + size2; 
+  int *arr3 = (int *) malloc(sizeof(int)*size3);
+  int i = 0, j = 0, k = 0;
+
+  while (i < size1 && j < size2){
+    
+  }
+  
+  
+         }
 
 /*
 Ejercicio 5: Comprobación de Ordenación
@@ -65,7 +88,13 @@ typedef struct {
 } Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion) {}
+                      int anioNacimiento, int anioPublicacion) {
+
+  strcpy(libro->titulo, titulo);
+  strcpy(libro->autor.nombre, nombreAutor);
+  libro->autor.anioNacimiento = anioNacimiento;
+  libro->anioPublicacion = anioPublicacion;  
+  }
 
 /*
 Ejercicio 7: Lista enlazada de números
