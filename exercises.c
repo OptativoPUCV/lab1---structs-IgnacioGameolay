@@ -99,9 +99,10 @@ int checkSorted(int arr[], int size) {
     if(arr[i] > arr[i+1]){
       orden = -1;
     }
-    if (temp != orden) return orden;
+    if (temp != orden) return 0;
   }
-  return orden; }
+  return orden; 
+}
 
 /*
 Ejercicio 6: Información de una Biblioteca
