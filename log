@@ -20,3 +20,21 @@ exercises.c:53:8: error: unused variable ‘arr3’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 8c95ab1
+Thu 14 Mar 2024 08:39:25 PM UTC: 
+ exercises.c | 2 --
+ 1 file changed, 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:28:7: error: unused variable ‘temp’ [-Werror=unused-variable]
+   28 |   int temp;
+      |       ^~~~
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:52:21: error: unused variable ‘k’ [-Werror=unused-variable]
+   52 |   int i = 0, j = 0, k = 0;
+      |                     ^
+exercises.c:51:8: error: unused variable ‘arr3’ [-Werror=unused-variable]
+   51 |   int *arr3 = (int *) malloc(sizeof(int)*size3);
+      |        ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+47e068e
