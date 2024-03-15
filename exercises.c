@@ -90,10 +90,10 @@ int checkSorted(int arr[], int size) {
   int ordenDescendente = 1;
 
   for (int i = 0; i < size - 1; i++){
-    if(arr[i] < arr[i+1]){
+    if(arr[i] > arr[i+1]){
         ordenAscendente = 0;
     } 
-    if(arr[i] > arr[i+1]){
+    if(arr[i] < arr[i+1]){
         ordenDescendente = 0;
     }
     if (ordenAscendente == 0 && ordenDescendente == 0){
