@@ -91,16 +91,16 @@ int checkSorted(int arr[], int size) {
   
   for (int i = 0; i < size - 1; i++){
     if(arr[i] < arr[i+1]){
-      orden = 1;
-      temp = orden;
+      temp = 1;
     } 
     if(arr[i] > arr[i+1]){
-      orden = -1;
-      temp = orden;
+      temp = -1;
     }
+    if (temp != 0 && temp != orden) return 0;
+    if (temp != 0) orden = temp;
     
   }
-  if (temp != orden) return 0;
+  
   return orden; 
 }
 
