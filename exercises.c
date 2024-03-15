@@ -104,7 +104,7 @@ int checkSorted(int arr[], int size) {
       return descenso;
     }
   }
-  return orden; 
+  return 0; 
 }
 
 /*
