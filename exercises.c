@@ -101,7 +101,7 @@ int checkSorted(int arr[], int size) {
     
   }
   
-  return orden; 
+  return orden != 0 ? orden:temp; 
 }
 
 /*
