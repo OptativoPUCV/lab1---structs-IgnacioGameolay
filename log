@@ -182,3 +182,18 @@ Fri 15 Mar 2024 09:18:31 PM UTC:
  tests:  0|2
 total_score: 50/70
 177e1b8
+Fri 15 Mar 2024 09:20:55 PM UTC: 
+ exercises.c | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘checkSorted’:
+exercises.c:107:10: error: ‘orden’ undeclared (first use in this function)
+  107 |   return orden;
+      |          ^~~~~
+exercises.c:107:10: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:108:1: error: control reaches end of non-void function [-Werror=return-type]
+  108 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+f7583b6
