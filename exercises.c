@@ -99,8 +99,8 @@ int checkSorted(int arr[], int size) {
     
 
   }
-  if (ordenAscendente == 1) return 1;
-  if (ordenDescendente == 1) return -1;
+  if (ordenAscendente) return 1;
+  if (ordenDescendente) return -1;
   
     return 0;
 }
