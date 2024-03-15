@@ -9,14 +9,14 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int findMax(int arr[], int size) { 
+int findMax(int arr[], int size) {
   int max = arr[0];
-  for (int i = 0; i < size; i++){
-    if (arr[i] > max){
+  for (int i = 0; i < size; i++) {
+    if (arr[i] > max) {
       max = arr[i];
     }
-  }  
-  return max; 
+  }
+  return max;
 }
 
 /*
@@ -26,7 +26,7 @@ invierta el orden de sus elementos.
 */
 void reverseArray(int arr[], int size) {
   int temp;
-  for (int i = 0; i < size / 2; i++){
+  for (int i = 0; i < size / 2; i++) {
     temp = arr[i];
     arr[i] = arr[size - i - 1];
     arr[size - i - 1] = temp;
@@ -38,21 +38,22 @@ Ejercicio 3: Filtrar Números Pares
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y luego devuelva un nuevo arreglo que contenga solo
 los números pares del arreglo original.
-newsize apunta a una dirección válida que no ha sido inicializada con nigún valor específico. 
-*newsize debe almacenar el tamaño del nuevo arreglo que se retorna.
+newsize apunta a una dirección válida que no ha sido inicializada con nigún
+valor específico. *newsize debe almacenar el tamaño del nuevo arreglo que se
+retorna.
 */
-int *filterEvenNumbers(int arr[], int size, int *newSize) { 
+int *filterEvenNumbers(int arr[], int size, int *newSize) {
   int *newArr = (int *)malloc(sizeof(int) * size);
   *newSize = 0;
-  
-  for (int i = 0; i < size; i++){
-    if (arr[i] % 2 == 0){
+
+  for (int i = 0; i < size; i++) {
+    if (arr[i] % 2 == 0) {
       newArr[*newSize] = arr[i];
       (*newSize)++;
     }
   }
-  
-  return newArr; 
+
+  return newArr;
 }
 
 /*
@@ -62,49 +63,51 @@ ordenados de menor a mayor y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado de menor a mayor.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) {}
-/*
+                       int result[]) {
+
   int i = 0, j = 0, k = 0;
 
-  while (i < size1 && j < size2){
-    if (arr1[i] < arr2[j]){
-        result[k] = arr1[i];
+  while (i < size1 && j < size2) {
+    if (arr1[i] < arr2[j]) {
+      result[k] = arr1[i];
       i++;
-      k++;
+      
+    } else {
+      result[k] = arr2[j];
+      j++;
     }
-    
-    
+    k++;
   }
   
-  
-         }
-*/
+}
+
 /*
 Ejercicio 5: Comprobación de Ordenación
 Descripción: Escribe una función que tome un arreglo y su tamaño,
 y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
   0 si no está ordenado, y -1 si está ordenado en orden descendente.
 */
-int checkSorted(int arr[], int size) { 
+int checkSorted(int arr[], int size) {
   int ordenAscendente = 1;
   int ordenDescendente = 1;
 
-  for (int i = 0; i < size - 1; i++){
-    if(arr[i] > arr[i+1]){
-        ordenAscendente = 0;
-    } 
-    if(arr[i] < arr[i+1]){
-        ordenDescendente = 0;
+  for (int i = 0; i < size - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      ordenAscendente = 0;
     }
-    if (ordenAscendente == 0 && ordenDescendente == 0){
-      return -0;
+    if (arr[i] < arr[i + 1]) {
+      ordenDescendente = 0;
     }
-
+    if (ordenAscendente == 0 && ordenDescendente == 0) {
+      return 0;
+    }
   }
-  if (ordenAscendente) return 1;
-  if (ordenDescendente) return -1;
-  
-    return 0;
+  if (ordenAscendente)
+    return 1;
+  if (ordenDescendente)
+    return -1;
+
+  return 0;
 }
 /*
 Ejercicio 6: Información de una Biblioteca
@@ -131,8 +134,8 @@ void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
   strcpy(libro->titulo, titulo);
   strcpy(libro->autor.nombre, nombreAutor);
   libro->autor.anioNacimiento = anioNacimiento;
-  libro->anioPublicacion = anioPublicacion;  
-  }
+  libro->anioPublicacion = anioPublicacion;
+}
 
 /*
 Ejercicio 7: Lista enlazada de números
@@ -151,22 +154,22 @@ typedef struct nodo {
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) { 
+Nodo *crearListaEnlazada(int arr[], int size) {
   Nodo *cabeza = NULL;
   Nodo *temp = NULL;
   Nodo *actual = NULL;
-  
-  for (int i = 0; i < size; i++){
+
+  for (int i = 0; i < size; i++) {
     temp = (Nodo *)malloc(sizeof(Nodo));
     temp->numero = arr[i];
     temp->siguiente = NULL;
 
-    if (cabeza == NULL) cabeza = temp;
-    else actual->siguiente = temp;
+    if (cabeza == NULL)
+      cabeza = temp;
+    else
+      actual->siguiente = temp;
     actual = temp;
   }
-  
-  
-  return cabeza; 
 
+  return cabeza;
 }
