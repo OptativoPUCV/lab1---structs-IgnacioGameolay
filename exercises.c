@@ -86,24 +86,24 @@ y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
   0 si no está ordenado, y -1 si está ordenado en orden descendente.
 */
 int checkSorted(int arr[], int size) { 
-  int orden = 0;
-  int temp = 0;
-  
+  int ordenAscendente = 1;
+  int ordenDescendente = 1;
+
   for (int i = 0; i < size - 1; i++){
     if(arr[i] < arr[i+1]){
-      temp = 1;
+        ordenAscendente = 0;
     } 
     if(arr[i] > arr[i+1]){
-      temp = -1;
+        ordenDescendente = 0;
     }
     
-    
-  }
-  if (temp != 0 && temp != orden) return 0;
-    if (temp != 0) orden = temp;
-  return orden != 0 ? orden:1; 
-}
 
+  }
+  if (ordenAscendente == 1) return 1;
+  if (ordenDescendente == 1) return -1;
+  
+    return 0;
+}
 /*
 Ejercicio 6: Información de una Biblioteca
 Descripción: Vamos a representar la información de una biblioteca. En la
